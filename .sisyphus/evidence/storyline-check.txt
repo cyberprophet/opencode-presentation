@@ -1,0 +1,28 @@
+Storyline Verification
+====================
+
+Headings (15 content slides + title):
+- 바이브 코딩, 왜 관심 없었나
+- OpenCode를 만나다
+- OhMyOpenCode: 한 단계 더
+- 🎬 라이브 데모
+- 산출물: diff-to-commit
+- 산출물: flutter_device_unique_id
+- 그 외 산출물들
+- 멀티 에이전트가 일하는 방식
+- Agent Models: 역할로 분리
+- OpenCode 핵심 특징
+- 신화 속 에이전트들
+- 왜 결과물이 다른가
+- 시작하기
+- 감사합니다 / Q&A
+- Appendix: Agent Models (Full Map)
+
+Metrics:
+- slides=16
+- separators=17
+- timing_tokens=16
+- timing_total=16.5
+
+Result:
+- PASS (storyline reordered, Agent Models + Appendix inserted, timing within 15~20)

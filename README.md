@@ -33,12 +33,15 @@ code {
 스크린샷 캡처 체크리스트 (발표자용)
 ================================================================================
 
-TODO: OpenCode TUI 실행 화면 캡처 - 터미널에서 `opencode` 명령어 실행 후 메인 화면
-TODO: OhMyOpenCode 멀티 에이전트 실행 화면 - 여러 에이전트가 동시에 작업하는 모습
-TODO: diff-to-commit VS Code Marketplace 페이지 스크린샷
-TODO: flutter_device_unique_id pub.dev 페이지 스크린샷 (flutter_device_platform_id)
-TODO: 발표자의 실제 터미널 화면 - opencode 명령어 입력 중인 모습
-TODO: 프로젝트 GitHub 리포지토리 메인 페이지 스크린샷
+| 항목 | 소스 | 저장 경로 | 담당 |
+|------|------|---------|------|
+| OpenCode TUI | `opencode` 명령 실행 후 메인 화면 | .sisyphus/evidence/opencode-tui.png | [MANUAL] 발표자 |
+| OhMyOpenCode 에이전트 | 멀티 에이전트 병렬 작업 화면 | .sisyphus/evidence/ohmyopencode-agents.png | [MANUAL] 발표자 |
+| diff-to-commit Marketplace | https://marketplace.visualstudio.com/items?itemName=Dayond.diff-to-commit | .sisyphus/evidence/shot-diff-to-commit.png | [AUTO] Playwright |
+| flutter_device_platform_id pub.dev | https://pub.dev/packages/flutter_device_platform_id | .sisyphus/evidence/shot-pubdev-flutter-device-platform-id.png | [AUTO] Playwright |
+| Terminal input | 발표자 터미널에서 `opencode` 입력 중인 모습 | .sisyphus/evidence/terminal-input.png | [MANUAL] 발표자 |
+| GitHub OpenCode | https://github.com/opencode-ai/opencode | .sisyphus/evidence/shot-github-opencode.png | [AUTO] Playwright |
+| GitHub OhMyOpenCode | https://github.com/code-yeongyu/oh-my-opencode | .sisyphus/evidence/shot-github-oh-my-opencode.png | [AUTO] Playwright |
 
 ================================================================================
 -->
@@ -50,24 +53,23 @@ TODO: 프로젝트 GitHub 리포지토리 메인 페이지 스크린샷
 <!--
 - [~0.5분] 인사 및 발표 주제 소개
 - 본인 소개 (발표자)
-- 발표 개요: OpenCode 발견 → OhMyOpenCode 활용 → 실제 산출물
-- 청중에게 기대: "여러분도 이렇게 쓸 수 있습니다"
+- 발표 목표: 회의론 -> 실시간 증명 -> 바로 시작하기
+- 청중에게 기대: "오늘 끝나고 바로 써볼 수 있다"
 -->
 
 ---
 
 ## 바이브 코딩, 왜 관심 없었나
 
-- "AI가 코드를 짠다고?" - 회의적이었음
-- 기존 툴 결과물이 마음에 안 들었음
-- 품질과 내 의도가 잘 맞지 않았음
+- "AI가 코드를 짠다"는 말이 과장처럼 느껴졌음
+- 결과물이 내 기준 품질을 못 맞추는 경우가 많았음
+- 그래서 한동안 실제 업무에는 쓰지 않았음
 
 <!--
-- [~1분] 솔직한 고백으로 시작
-- 기존 바이브 코딩 툴의 한계 2-3가지 언급
-- "결과물이 제 마음에 안 들었어요"
-- Claude 사용자들과 공감대 형성
-- 전환점: "그런데 OpenCode를 만나고..."
+- [~1분] 솔직한 출발점 공유
+- 기술 낙관보다 실무자의 품질 기준으로 시작
+- 청중(Claude 사용자)와 공감대 형성
+- 전환 질문: "그런데 왜 생각이 바뀌었을까?"
 -->
 
 ---
@@ -75,137 +77,74 @@ TODO: 프로젝트 GitHub 리포지토리 메인 페이지 스크린샷
 ## OpenCode를 만나다
 
 - 오픈소스 터미널 기반 AI 코딩 에이전트
-- 75+ LLM 프로바이더 지원 (Anthropic, OpenAI, Ollama)
-- VS Code처럼 TUI로 작업 가능
+- 75+ LLM provider를 그대로 연결해서 사용
+- TUI 중심 워크플로우로 빠른 피드백 가능
 
 <!--
-- [~1.5분] OpenCode 소개 (What + Why)
-- 오픈소스: 커스터마이징 가능, 락인 없음
-- 75+ 프로바이더: Anthropic, OpenAI, Ollama, Copilot 등
-- TUI: 터미널에서 직접 작업, 빠른 피드백
-- "Claude Code 대안으로 딱!"
--->
-
----
-
-## OpenCode 핵심 특징
-
-- 🖥️ 터미널 기반 TUI (Bubble Tea)
-- 💾 세션 관리 (SQLite) - 작업 이어하기
-- 🔧 LSP 통합, Bash 실행
-- 🔓 프로바이더 자유 (구독 그대로 사용)
-
-<!--
-- [~1.5분] 핵심 기능 4가지 소개
-- TUI: 마우스 없이 키보드로 빠른 작업
-- 세션: 이어서 작업 가능
-- LSP: 코드 품질 자동 검증
-- 프로바이더: 기존 구독 그대로 사용
+- [~1.2분] OpenCode의 정체성과 차별점
+- "새 도구 학습"보다 "기존 터미널 루틴 확장"으로 설명
+- 락인보다 선택권 강조
 -->
 
 ---
 
 ## OhMyOpenCode: 한 단계 더
 
-- OpenCode 위의 오케스트레이션 레이어
-- 멀티 에이전트 병렬 실행
-- 복잡한 빌드 파이프라인 자동 이해
+- OpenCode 위에 얹는 오케스트레이션 레이어
+- 멀티 에이전트 병렬 실행으로 탐색/구현/검증 분리
+- 복잡한 작업을 계획 -> 실행 -> 확인 루프로 자동화
 
 <!--
-- [~1.5분] OhMyOpenCode 소개
-- "OpenCode에 날개를 달아주는 플러그인"
-- 멀티 에이전트: 한 번에 여러 작업 수행
-- 오케스트레이션: 계획→실행→검증 자동화
-- 결과: 더 빠르고, 더 나은 코드
+- [~1.2분] 도구 조합의 핵심 가치
+- 단일 모델 사용과 멀티 에이전트 사용의 체감 차이 강조
+- 다음 슬라이드에서 실시간으로 바로 증명 예고
 -->
 
 ---
 
-## 신화 속 에이전트들
+## 🎬 라이브 데모
 
-- 🎯 Prometheus: 기획 및 아키텍처 설계
-- 🏋️ Sisyphus: 코드 실행 및 반복 작업
-- 🔍 Explorer: 탐색 및 리서치
-- 🛡️ Guardian: 검증 및 보안
+실시간으로 OpenCode + OhMyOpenCode 실행 (3분 타임박스)
 
-<!--
-- [~1분] 그리스 신화 캐릭터 소개
-- Prometheus: "불을 가져온 자" → 아이디어와 계획
-- Sisyphus: 끈질긴 실행자 → 코딩과 반복 작업
-- Explorer: 탐험가 → 코드베이스 탐색
-- Guardian: 수호자 → 품질 검증
-- "재미있는 네이밍이지만 실제로 잘 어울려요"
--->
-
----
-
-## 멀티 에이전트가 일하는 방식
-
-```
-계획(Prometheus) → 실행(Sisyphus) → 검증(Guardian)
-     ↓                    ↓                    ↓
-  아키텍처           코드 작성          테스트/리뷰
-```
+1. 발표 5분 전 warm-up 실행으로 초기 지연 제거
+2. `opencode`로 TUI 진입
+3. `ulw - 배열 중복 제거 함수 + 테스트까지` 입력
+4. 병렬 에이전트 흐름 확인
+5. 결과/테스트 확인 후 다음 슬라이드로 이동
 
 <!--
-- [~1.5분] 병렬 실행 플로우 설명
-- Prometheus가 전체 계획 수립
-- 여러 Sisyphus 에이전트가 병렬로 작업
-- Guardian이 결과물 검증
-- Explorer가 필요한 정보 수집
-- "마치 개발팀이 일하는 것처럼"
--->
-
----
-
-## 🎬 데모 타임
-
-▶️ 90초 녹화 영상 재생
-"OpenCode + OhMyOpenCode로 간단한 유틸리티 함수 구현"
-
-<!--
-- [~1.5분] 데모 영상 재생
-- 90초 녹화 영상을 재생합니다
-- 시나리오: 배열 중복 제거 함수 구현
-- 보여주는 것:
-  * OpenCode TUI 실행
-  * 프롬프트 입력
-  * 멀티 에이전트 병렬 작업
-  * 결과물 생성 및 테스트 통과
-  * diff-to-commit으로 커밋 메시지 생성
-- 발표자는 각 단계를 간단히 설명하며 진행
+- [~3분] 라이브 데모
+- 중단 신호: "여기서부터는 결과 화면으로 이어가겠습니다"
+- 플랜 B 없음 -> 타임박스와 컷오프 멘트를 반드시 사용
+- 데모 실패 시에도 산출물 슬라이드로 메시지 유지
 -->
 
 ---
 
 ## 산출물: diff-to-commit
 
-- VS Code 확장: AI가 git diff로 커밋 메시지 작성
-- Conventional Commit 포맷 자동 생성
-- GitHub Copilot / API Key 지원
+- VS Code 확장: git diff 기반 커밋 메시지 자동 생성
+- Conventional Commit 포맷으로 일관성 유지
+- Marketplace 배포 후 실사용 피드백 반영 중
 
 <!--
-- [~1.5분] 첫 번째 딥다이브 프로젝트
-- VS Code Marketplace에 배포됨 (Dayond.diff-to-commit)
-- 기능: git diff → AI 분석 → 커밋 메시지 자동 생성
-- 보안: API 키 등 시크릿 자동 마스킹
-- "이 확장도 OpenCode로 개발했습니다"
+- [~1.2분] 증거 1
+- 단순 데모가 아니라 실제 배포 결과임을 강조
+- 체크리스트의 Marketplace 캡처와 연결
 -->
 
 ---
 
 ## 산출물: flutter_device_unique_id
 
-- 5개 플랫폼 지원 (Android, iOS, macOS, Windows, Web)
-- Keychain/Registry/localStorage 활용
-- pub.dev: flutter_device_platform_id (4⭐)
+- Android/iOS/macOS/Windows/Web 5개 플랫폼 지원
+- 플랫폼별 저장소(Keychain/Registry/localStorage) 대응
+- pub.dev 패키지명: `flutter_device_platform_id`
 
 <!--
-- [~1.5분] 두 번째 딥다이브 프로젝트
-- 크로스 플랫폼 디바이스 ID 플러그인
-- 각 플랫폼별 네이티브 구현 (Swift, Kotlin, C++, JS)
-- pub.dev에 배포, 4 stars, 3 forks
-- "복잡한 네이티브 코드도 바이브 코딩으로"
+- [~1.2분] 증거 2
+- 크로스플랫폼 난도를 짧게 짚고 결과를 보여줌
+- 체크리스트의 pub.dev 캡처와 연결
 -->
 
 ---
@@ -214,33 +153,93 @@ TODO: 프로젝트 GitHub 리포지토리 메인 페이지 스크린샷
 
 | 프로젝트 | 설명 | 배포 |
 |---------|------|------|
-| flutter_image_conversion | HEIC → JPEG 변환 | pub.dev |
+| flutter_image_conversion | HEIC -> JPEG 변환 | pub.dev |
 | flutter_native_image_compress | 네이티브 이미지 압축 | pub.dev |
 
 <!--
-- [~1분] 나머지 프로젝트 간단히 소개
-- flutter_image_conversion: iOS/macOS/Web 지원
-- flutter_native_image_compress: WebP/JPEG/PNG 포맷
-- 두 프로젝트 모두 pub.dev에 배포 완료
-- "총 4개 프로젝트, 모두 OpenCode로 개발"
+- [~0.8분] 증거 3
+- "한 번의 우연"이 아닌 반복 가능한 생산성임을 전달
+- 세부 설명보다 포트폴리오 누적으로 설득
+-->
+
+---
+
+## 멀티 에이전트가 일하는 방식
+
+```
+계획(Prometheus) -> 실행(Sisyphus) -> 검증(Guardian)
+     ↓                    ↓                    ↓
+  아키텍처           코드 작성          테스트/리뷰
+```
+
+<!--
+- [~1분] 처리 구조 설명
+- 데모/산출물에서 본 현상을 구조로 해석
+- "팀처럼 분업"이라는 비유를 유지
+-->
+
+---
+
+## Agent Models: 역할로 분리
+
+<div style="display:flex; gap:32px; justify-content:center; align-items:center;">
+  <div style="flex:1; text-align:center;">
+    <img src="https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/dev/.github/assets/sisyphus.png" width="320" />
+    <div style="font-size:0.75em; margin-top:8px;">Sisyphus - Orchestrator (anthropic/claude-opus-4-6)</div>
+  </div>
+  <div style="flex:1; text-align:center;">
+    <img src="https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/refs/heads/dev/.github/assets/hephaestus.png" width="320" />
+    <div style="font-size:0.75em; margin-top:8px;">Hephaestus - Craftsman (openai/gpt-5.3-codex)</div>
+  </div>
+</div>
+
+<!--
+- [~1분] 역할별 모델 분리 이유: 품질 + 속도/비용 + 코드 특화
+- fallback 체인: 가용성/복원력 확보
+- 예외: Hephaestus는 일관성을 위해 no-fallback
+-->
+
+---
+
+## OpenCode 핵심 특징
+
+- 터미널 중심 TUI로 빠른 루프
+- 세션 기반으로 작업 이어가기
+- LSP + Bash 통합으로 검증 자동화
+- 모델/프로바이더 선택권 유지
+
+<!--
+- [~1분] 기능 요약
+- 이미 본 증거를 기능과 연결해서 정리
+- 장점 나열보다 "왜 실무에서 먹히는지"에 초점
+-->
+
+---
+
+## 신화 속 에이전트들
+
+- Prometheus: 기획/설계
+- Sisyphus: 실행/반복
+- Explorer: 탐색/리서치
+- Guardian: 검증/품질
+
+<!--
+- [~0.8분] 네이밍을 기억 장치로 활용
+- 역할 분리 구조를 다시 짧게 리마인드
 -->
 
 ---
 
 ## 왜 결과물이 다른가
 
-- 멀티 에이전트의 병렬 처리
-- 자동 검증 및 테스트
-- 프로바이더 자유로운 선택
-- **결과: 만족스러운 코드 품질**
+- 요청 하나를 병렬 에이전트로 분해해 처리함
+- 탐색(explore/librarian)과 구현을 동시에 진행함
+- 빌드/테스트 검증 루프를 기본으로 탑재함
+- 결과: 실전 배포(Marketplace/pub.dev)까지 연결됨
 
 <!--
-- [~1.5분] 다른 툴 대비 차이점
-- 병렬 처리: 동시에 여러 작업 → 더 빠른 결과
-- 자동 검증: 코드 오류 미리 잡아줌
-- 프로바이더: 내가 원하는 AI 모델 사용
-- 핵심: "결과물의 품질이 다릅니다"
-- 개인 경험 기반으로 진정성 있게 설명
+- [~1.2분] 추상 설명 대신 근거 중심으로 마무리
+- 앞선 산출물 슬라이드와 자연스럽게 연결
 -->
 
 ---
@@ -248,23 +247,19 @@ TODO: 프로젝트 GitHub 리포지토리 메인 페이지 스크린샷
 ## 시작하기
 
 ```bash
-# 1. OpenCode 설치
+# 1) OpenCode 설치
 curl -fsSL https://opencode.ai/install | bash
 
-# 2. OhMyOpenCode 설치
+# 2) OhMyOpenCode 설치
 bunx oh-my-opencode install
 
-# 3. 첫 실행
+# 3) 실행
 opencode
 ```
 
 <!--
-- [~1분] 실제 설치 및 시작 방법
-- 한 줄 설치 (curl)
-- OhMyOpenCode 플러그인 설치
-- 터미널에서 `opencode` 실행
-- "지금 바로 시작할 수 있습니다"
-- GitHub: github.com/opencode-ai/opencode
+- [~0.8분] 바로 실행 가능한 시작점 제공
+- 발표 직후 따라할 수 있는 3단계만 유지
 -->
 
 ---
@@ -276,9 +271,33 @@ opencode
 🐙 github.com/cyberprophet
 
 <!--
-- [~0.5분] 마무리
-- 감사 인사
-- 질문 받기
-- 연락처 및 리소스 공유
-- "OpenCode로 여러분의 프로젝트도 만들어보세요!"
+- [~0.4분] 마무리
+- 질문이 Agent Models로 가면 다음 Appendix로 이동
+-->
+
+---
+
+## Appendix: Agent Models (Full Map)
+
+<div style="font-size:0.72em;">
+
+| Agent | Model | Purpose |
+|---|---|---|
+| Sisyphus | anthropic/claude-opus-4-6 | Primary orchestrator (fallback: kimi-k2.5 -> glm-4.7 -> gpt-5.3-codex -> gemini-3-pro) |
+| Hephaestus | openai/gpt-5.3-codex | Autonomous deep worker, "The Legitimate Craftsman" (requires gpt-5.3-codex, no fallback) |
+| Atlas | anthropic/claude-sonnet-4-5 | Master orchestrator (fallback: kimi-k2.5 -> gpt-5.2) |
+| oracle | openai/gpt-5.2 | Consultation, debugging |
+| librarian | zai-coding-plan/glm-4.7 | Docs, GitHub search (fallback: glm-4.7-free) |
+| explore | xai/grok-code-fast-1 | Fast codebase grep (fallback: claude-haiku-4-5 -> gpt-5-mini -> gpt-5-nano) |
+| multimodal-looker | google/gemini-3-flash | PDF/image analysis |
+| Prometheus | anthropic/claude-opus-4-6 | Strategic planning (fallback: kimi-k2.5 -> gpt-5.2) |
+| Metis | anthropic/claude-opus-4-6 | Pre-planning analysis (temp 0.3, fallback: kimi-k2.5 -> gpt-5.2) |
+| Momus | openai/gpt-5.2 | Plan validation (temp 0.1, fallback: claude-opus-4-6) |
+| Sisyphus-Junior | anthropic/claude-sonnet-4-5 | Category-spawned executor (temp 0.1) |
+
+</div>
+
+<!--
+- [~0.2분] 필요 시에만 설명하고 스킵 가능
+- 본문은 역할 분리 원리 중심, 상세 표는 부록에서 대응
 -->

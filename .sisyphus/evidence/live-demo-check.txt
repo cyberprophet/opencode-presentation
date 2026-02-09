@@ -1,0 +1,10 @@
+Live Demo Verification
+======================
+
+Checks:
+- forbidden_keywords(녹화|영상 재생|OBS|QuickTime)=0
+- live_terms(라이브|live|실시간)=5
+- demo_steps=5
+
+Result:
+- PASS (live demo wording applied, recorded-demo wording removed)
