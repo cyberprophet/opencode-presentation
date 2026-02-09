@@ -1,0 +1,17 @@
+Screenshot Matrix Verification
+==============================
+
+Checks:
+- matrix_header_present=1
+- manual_tags=3
+- auto_tags=4
+- expected_rows=7
+- png_files_in_repo=.sisyphus/evidence/*.png -> 0
+
+Notes:
+- Checklist matrix exists in README comment block.
+- Screenshot files are not currently present in repository path.
+
+Result:
+- PASS (matrix structure/ownership complete)
+- WARN (png evidence files not found in repo)
