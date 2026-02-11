@@ -135,13 +135,18 @@ blockquote {
 
 ## 바이브 코딩, 왜 관심 없었나
 
-- "AI가 코드를 짠다"는 말이 **과장**처럼 느껴졌음
-- 결과물이 내 기준 **품질을 못 맞추는** 경우가 많았음
-- 그래서 한동안 실제 업무에는 쓰지 않았음
+<div style="font-size:1.1em; margin:24px 0 16px; color:#a7a9be;">
+"AI가 코드를 짠다"는 말이 <strong>과장</strong>처럼 느껴졌다
+</div>
+
+<div style="font-size:0.65em; color:#666; line-height:1.8;">
+결과물 품질이 내 기준에 못 미침 · 실제 업무에선 쓰지 않았음<br/>
+<strong style="color:#ff8906;">그런데 왜 생각이 바뀌었을까?</strong>
+</div>
 
 <!--
-- [~1분] 솔직한 출발점 공유
-- 전환 질문: "그런데 왜 생각이 바뀌었을까?"
+- [~0.9분] 회의적인 출발점을 한 문장으로 강하게 전달
+- "왜 생각이 바뀌었는가"를 다음 슬라이드로 연결
 -->
 
 ---
@@ -153,7 +158,7 @@ blockquote {
 - TUI 중심 워크플로우로 **빠른 피드백** 가능
 
 <!--
-- [~1.2분] OpenCode의 정체성과 차별점
+- [~1.1분] OpenCode의 정체성과 차별점
 - "새 도구 학습"보다 "기존 터미널 루틴 확장"
 -->
 
@@ -166,20 +171,31 @@ blockquote {
 - 복잡한 작업을 **계획 → 실행 → 확인** 루프로 자동화
 
 <!--
-- [~1.2분] 도구 조합의 핵심 가치
-- 단일 모델 vs 멀티 에이전트 체감 차이 강조
+- [~1.1분] 단일 에이전트 대비 체감 차이 소개
+- 이제부터 실제 결과물로 증명
 -->
 
 ---
 
 ## 산출물: diff-to-commit
 
-- VS Code 확장: **git diff 기반 커밋 메시지** 자동 생성
-- **Conventional Commit** 포맷으로 일관성 유지
-- Marketplace 배포 후 실사용 피드백 반영 중
+<div style="display:flex; gap:28px; justify-content:center; align-items:center; margin-top:8px;">
+  <div style="flex:1.2; text-align:center;">
+    <img src="https://github.com/user-attachments/assets/c7fb4f02-c84b-4279-bd5e-843e72eb4388" width="480" style="border-radius:12px; border:2px solid rgba(255,137,6,0.2); box-shadow: 0 4px 24px rgba(0,0,0,0.4);" />
+  </div>
+  <div style="flex:1; text-align:left; font-size:0.68em;">
+    <ul style="color:#a7a9be;">
+      <li>VS Code 확장: <strong>git diff 기반 커밋 메시지</strong> 자동 생성</li>
+      <li><strong>Conventional Commit</strong> 포맷으로 일관성 유지</li>
+      <li>민감 정보(API 키 등) <strong>자동 마스킹</strong></li>
+      <li>Marketplace 배포 후 실사용 피드백 반영 중</li>
+    </ul>
+  </div>
+</div>
 
 <!--
-- [~1.2분] 증거 1 — 실제 배포된 결과물
+- [~1.1분] 증거 1 — 실제 배포된 결과물
+- 스크린샷으로 사용성/완성도 빠르게 전달
 -->
 
 ---
@@ -191,7 +207,7 @@ blockquote {
 - pub.dev 패키지명: `flutter_device_platform_id`
 
 <!--
-- [~1.2분] 증거 2 — 크로스플랫폼 난도
+- [~1.1분] 증거 2 — 크로스플랫폼 구현 난도와 완성도
 -->
 
 ---
@@ -206,7 +222,23 @@ blockquote {
 > "한 번의 우연"이 아닌, **반복 가능한 생산성**
 
 <!--
-- [~0.8분] 증거 3 — 포트폴리오 누적
+- [~0.8분] 증거 3 — 포트폴리오가 누적되는 재현성 강조
+-->
+
+---
+
+## 왜 결과물이 다른가
+
+- 요청 하나를 **병렬 에이전트**로 분해해 처리
+- 탐색(explore/librarian)과 **구현을 동시에** 진행
+- **빌드/테스트 검증 루프**를 기본으로 탑재
+- 결과: **실전 배포**(Marketplace/pub.dev)까지 연결
+
+> 어떤 구조가 이걸 가능하게 할까? →
+
+<!--
+- [~1분] 산출물을 가능하게 한 이유를 먼저 제시
+- "왜 다른지"를 보여주고, 다음 슬라이드에서 "어떻게" 설명
 -->
 
 ---
@@ -220,8 +252,8 @@ blockquote {
 ```
 
 <!--
-- [~1분] 처리 구조 설명
-- "팀처럼 분업"이라는 비유를 유지
+- [~1분] 앞 슬라이드의 "왜"를 이 구조로 해설
+- "팀처럼 분업" 비유로 병렬 처리 감각 전달
 -->
 
 ---
@@ -250,8 +282,8 @@ blockquote {
 </div>
 
 <!--
-- [~1분] 메인 에이전트 3종
-- 각 에이전트의 전담 역할과 사용 모델
+- [~1분] 메인 에이전트 3종의 전담 역할
+- 계획/조율/심층 작업의 책임 분리 강조
 -->
 
 ---
@@ -274,7 +306,7 @@ blockquote {
 </div>
 
 <!--
-- [~0.8분] Atlas — 그리스 신화에서 하늘을 떠받치는 타이탄
+- [~0.8분] Atlas가 전체 흐름을 통합하는 지점 설명
 -->
 
 ---
@@ -295,87 +327,74 @@ blockquote {
 </div>
 
 <!--
-- [~1분] 지원 에이전트 — 각자 특화된 역할 수행
+- [~0.9분] 지원 에이전트들이 병렬 파이프라인을 보강하는 방식
 -->
 
 ---
 
-## 설정 파일로 모델 자유롭게 선택
+## 설정: 모델을 자유롭게
 
-<div style="font-size:0.48em;">
+<div style="display:flex; gap:24px; justify-content:center; align-items:flex-start; margin-top:4px;">
+  <div style="flex:1.3; font-size:0.44em;">
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/.../oh-my-opencode.schema.json",
   "agents": {
     "sisyphus":   { "model": "openai/gpt-5.3-codex", "variant": "xhigh" },
     "oracle":     { "model": "openai/gpt-5.2",       "variant": "high"  },
     "prometheus": { "model": "openai/gpt-5.2",       "variant": "xhigh" },
-    "metis":      { "model": "anthropic/claude-opus-4-6", "variant": "max" },
     "atlas":      { "model": "anthropic/claude-sonnet-4-5" },
-    "librarian":  { "model": "anthropic/claude-sonnet-4-5" },
     "explore":    { "model": "anthropic/claude-haiku-4-5" }
-  },
-  "categories": {
-    "visual-engineering": { "model": "google/gemini-3-pro" },
-    "ultrabrain":         { "model": "openai/gpt-5.3-codex", "variant": "xhigh" },
-    "quick":              { "model": "anthropic/claude-haiku-4-5" }
   }
 }
 ```
 
-</div>
-
-<div style="font-size:0.5em; color:#a7a9be; margin-top:4px;">
-
-`.config/opencode/oh-my-opencode.json` · **기본값이 내장**되어 별도 설정 없이 즉시 사용 가능
-
+  </div>
+  <div style="flex:1; text-align:left; font-size:0.6em;">
+    <ul style="color:#a7a9be;">
+      <li><strong>기본값 내장</strong> — 설정 없이 즉시 사용</li>
+      <li><strong>자유로운 교체</strong> — 에이전트별 모델 선택</li>
+      <li><strong>역할별 최적화</strong> — 핵심엔 비싼 모델, 탐색엔 가벼운 모델</li>
+      <li><strong>variant</strong> — low·medium·high·xhigh·max</li>
+    </ul>
+  </div>
 </div>
 
 <!--
-- [~1분] 설정 파일 설명
-- 기본값 내장 → 바로 사용 가능
-- 원하는 모델로 자유롭게 교체 가능
--->
-
----
-
-## 모델 설정의 핵심
-
-- **기본값 내장** — 설치 즉시 사용, 별도 설정 불필요
-- **자유로운 교체** — 에이전트별 모델을 원하는 대로 선택
-- **역할별 최적화** — 비싼 모델은 핵심에, 가벼운 모델은 탐색에
-- **variant 옵션** — low · medium · high · xhigh · max로 추론 강도 조절
-
-<!--
-- [~0.8분] 설정의 장점
-- 초보자도 바로 시작 + 파워 유저는 세밀 조정
+- [~1분] 설정 구조와 운영 원칙을 한 장으로 압축 전달
+- 기본값 즉시 사용 + 역할별 최적화 가능성 강조
 -->
 
 ---
 
 ## OpenCode 핵심 특징
 
-- **터미널 중심 TUI**로 빠른 루프
-- **세션 기반**으로 작업 이어가기
-- **LSP + Bash** 통합으로 검증 자동화
-- **모델/프로바이더** 선택권 유지
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; font-size:0.6em;">
+  <div style="background:rgba(255,137,6,0.08); border:1px solid rgba(255,137,6,0.2); border-radius:12px; padding:20px; text-align:left;">
+    <div style="font-size:1.2em; margin-bottom:6px;">⚡</div>
+    <strong>터미널 중심 TUI</strong>
+    <div style="color:#a7a9be; font-size:0.9em; margin-top:4px;">IDE 없이 빠른 피드백 루프</div>
+  </div>
+  <div style="background:rgba(255,137,6,0.08); border:1px solid rgba(255,137,6,0.2); border-radius:12px; padding:20px; text-align:left;">
+    <div style="font-size:1.2em; margin-bottom:6px;">🔄</div>
+    <strong>세션 기반 연속성</strong>
+    <div style="color:#a7a9be; font-size:0.9em; margin-top:4px;">중단 없이 작업 이어가기</div>
+  </div>
+  <div style="background:rgba(255,137,6,0.08); border:1px solid rgba(255,137,6,0.2); border-radius:12px; padding:20px; text-align:left;">
+    <div style="font-size:1.2em; margin-bottom:6px;">🔍</div>
+    <strong>LSP + Bash 통합</strong>
+    <div style="color:#a7a9be; font-size:0.9em; margin-top:4px;">코드 검증 자동화</div>
+  </div>
+  <div style="background:rgba(255,137,6,0.08); border:1px solid rgba(255,137,6,0.2); border-radius:12px; padding:20px; text-align:left;">
+    <div style="font-size:1.2em; margin-bottom:6px;">🔗</div>
+    <strong>75+ 모델/프로바이더</strong>
+    <div style="color:#a7a9be; font-size:0.9em; margin-top:4px;">원하는 LLM 자유롭게 선택</div>
+  </div>
+</div>
 
 <!--
-- [~1분] 기능 요약 — "왜 실무에서 먹히는지"에 초점
--->
-
----
-
-## 왜 결과물이 다른가
-
-- 요청 하나를 **병렬 에이전트**로 분해해 처리
-- 탐색(explore/librarian)과 **구현을 동시에** 진행
-- **빌드/테스트 검증 루프**를 기본으로 탑재
-- 결과: **실전 배포**(Marketplace/pub.dev)까지 연결
-
-<!--
-- [~1.2분] 근거 중심 마무리
+- [~0.9분] 핵심 기능을 카드형으로 빠르게 인지시키기
+- 바로 다음 슬라이드에서 실행 방법으로 전환
 -->
 
 ---
@@ -394,7 +413,7 @@ opencode
 ```
 
 <!--
-- [~0.8분] 바로 실행 가능한 3단계
+- [~0.8분] 바로 실행 가능한 3단계 안내
 -->
 
 ---
@@ -404,3 +423,7 @@ opencode
 **질문 있으신가요?**
 
 🐙 github.com/cyberprophet
+
+<!--
+- [~0.5분] 마무리 및 질의응답
+-->
