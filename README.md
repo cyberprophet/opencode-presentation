@@ -125,6 +125,12 @@ blockquote {
 
 **바이브 코딩 랩 발표**
 
+<div style="margin-top:32px; font-size:0.75em; color:#a7a9be;">
+<strong style="color:#fffffe; font-size:1.1em;">박상우</strong> · 공유인베스트
+<br/>
+🐙 <a href="https://github.com/cyberprophet">github.com/cyberprophet</a>
+</div>
+
 <!--
 - [~0.5분] 인사 및 발표 주제 소개
 - 본인 소개 (발표자)
@@ -144,8 +150,13 @@ blockquote {
 <strong style="color:#ff8906;">그런데 왜 생각이 바뀌었을까?</strong>
 </div>
 
+<div style="font-size:0.58em; color:#a7a9be; margin-top:12px; border-left:3px solid #ff8906; padding-left:12px;">
+직접 써보니 — 하루 만에 <strong>pub.dev 배포</strong>까지 완료된 순간, 생각이 바뀌었다
+</div>
+
 <!--
 - [~0.9분] 회의적인 출발점을 한 문장으로 강하게 전달
+- 전환 계기를 구체적 경험으로 한 줄 추가
 - "왜 생각이 바뀌었는가"를 다음 슬라이드로 연결
 -->
 
@@ -200,7 +211,7 @@ blockquote {
 
 ---
 
-## 산출물: flutter_device_unique_id
+## 산출물: flutter_device_platform_id
 
 - **Android/iOS/macOS/Windows/Web** 5개 플랫폼 지원
 - 플랫폼별 저장소(Keychain/Registry/localStorage) 대응
@@ -245,15 +256,37 @@ blockquote {
 
 ## 멀티 에이전트가 일하는 방식
 
-```
-계획(Prometheus) ──→ 실행(Sisyphus) ──→ 검증(Guardian)
-      ↓                     ↓                    ↓
-   아키텍처            코드 작성           테스트/리뷰
-```
+<div style="display:flex; justify-content:center; align-items:center; gap:0; margin-top:24px;">
+  <div style="background:rgba(255,137,6,0.12); border:2px solid rgba(255,137,6,0.4); border-radius:12px; padding:18px 22px; text-align:center; min-width:180px;">
+    <div style="font-size:1.3em;">📐</div>
+    <div style="font-size:0.72em; color:#fffffe; font-weight:700;">계획</div>
+    <div style="font-size:0.52em; color:#ff8906;">Prometheus</div>
+    <div style="font-size:0.45em; color:#a7a9be; margin-top:4px;">아키텍처 설계</div>
+  </div>
+  <div style="font-size:1.5em; color:#ff8906; padding:0 12px;">→</div>
+  <div style="background:rgba(255,137,6,0.12); border:2px solid rgba(255,137,6,0.4); border-radius:12px; padding:18px 22px; text-align:center; min-width:180px;">
+    <div style="font-size:1.3em;">⚙️</div>
+    <div style="font-size:0.72em; color:#fffffe; font-weight:700;">실행</div>
+    <div style="font-size:0.52em; color:#ff8906;">Sisyphus</div>
+    <div style="font-size:0.45em; color:#a7a9be; margin-top:4px;">에이전트 조율 · 코드 작성</div>
+  </div>
+  <div style="font-size:1.5em; color:#ff8906; padding:0 12px;">→</div>
+  <div style="background:rgba(255,137,6,0.12); border:2px solid rgba(255,137,6,0.4); border-radius:12px; padding:18px 22px; text-align:center; min-width:180px;">
+    <div style="font-size:1.3em;">🔨</div>
+    <div style="font-size:0.72em; color:#fffffe; font-weight:700;">심층 작업</div>
+    <div style="font-size:0.52em; color:#ff8906;">Hephaestus</div>
+    <div style="font-size:0.45em; color:#a7a9be; margin-top:4px;">심층 구현 · 검증</div>
+  </div>
+</div>
+
+<div style="text-align:center; margin-top:16px; font-size:0.52em; color:#666;">
+↕ <strong style="color:#a7a9be;">Atlas</strong>가 전체 흐름을 오케스트레이션
+</div>
 
 <!--
 - [~1분] 앞 슬라이드의 "왜"를 이 구조로 해설
 - "팀처럼 분업" 비유로 병렬 처리 감각 전달
+- Guardian 제거, 실제 에이전트(Prometheus → Sisyphus → Hephaestus)로 구성
 -->
 
 ---
@@ -414,6 +447,24 @@ opencode
 
 <!--
 - [~0.8분] 바로 실행 가능한 3단계 안내
+-->
+
+---
+
+## 한 줄 요약
+
+<div style="text-align:center; margin-top:48px;">
+<span style="font-size:1.4em; font-weight:900; background:linear-gradient(135deg, #ff8906, #f25f4c); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
+OpenCode + OhMyOpenCode = 반복 가능한 실전 배포
+</span>
+</div>
+
+<div style="text-align:center; margin-top:24px; font-size:0.65em; color:#a7a9be;">
+아이디어 → 구현 → 검증 → 배포, 이 루프를 <strong>AI 에이전트 팀</strong>과 함께
+</div>
+
+<!--
+- [~0.3분] 핵심 메시지 한 줄로 각인
 -->
 
 ---
